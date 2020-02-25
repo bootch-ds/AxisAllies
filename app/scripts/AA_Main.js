@@ -77,22 +77,22 @@ app.controller('Modal_Contoller', function ($scope, $rootScope) {
 		$scope.ModalData.TargetModal = data.Target;
 		switch ($scope.ModalData.TargetModal) {
 			case 'NEW_MEMBER':
-				$scope.ModalData.URL = 'WebParts/Members/Create.html';
+				$scope.ModalData.URL = 'AxisAllies/app/views/Members/Create.html';
 				break;
 			case 'EDIT_MEMBER':
-				$scope.ModalData.URL = 'WebParts/Members/Edit.html';
+				$scope.ModalData.URL = 'AxisAllies/app/views/Members/Edit.html';
 				break;
 			case 'ADD_POINTS':
-				$scope.ModalData.URL = 'WebParts/Roster/AddPoints.html';
+				$scope.ModalData.URL = 'AxisAllies/app/views/Roster/AddPoints.html';
 				break;
 			default:
-				$scope.ModalData.URL = 'Testing/modalContent.html';
+				$scope.ModalData.URL = 'AxisAllies/app/views/DummyModal.html';
 				break;
 		}
 	};
 	$scope.UnLoadModal = function (data) {
 		$scope.ModalData.TargetModal = "";
-		$scope.ModalData.URL = 'WebParts/DummyModal.html';
+		$scope.ModalData.URL = 'AxisAllies/app/views/DummyModal.html';
 
 		//since the Modal does not re-draw at this point the Content for the Modal is Maintained (html/Controller/Scope)
 		// => force an update to the Modal_Controller.$scope
