@@ -30,25 +30,25 @@ app.directive('gamesactive', function () {
 app.directive('footer', function () {
 	return {
 		restrict: 'A',
-		templateUrl: '/app/views/shared/footer.html'
+		templateUrl: 'AxisAllies/app/views/shared/footer.html'
 	};
 });
 app.directive('header', function () {
 	return {
 		restrict: 'A',
-		templateUrl: '/app/views/shared/header.html'
+		templateUrl: 'AxisAllies/app/views/shared/header.html'
 	};
 });
 
 app.directive('settings', function () {
 	return {
 		restrict: 'A',
-		templateUrl: '/app/views/modals/settings.html'
+		templateUrl: 'AxisAllies/app/views/modals/settings.html'
 	};
 });
 app.directive('newgame', function () {
 	return {
 		restrict: 'A',
-		templateUrl: '/app/views/modals/newgame.html'
+		templateUrl: 'AxisAllies/app/views/modals/newgame.html'
 	};
 });
