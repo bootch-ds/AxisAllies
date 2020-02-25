@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<base href="/" />
+	<title>Axis Allies Win/Loss</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
+
+	<link rel="stylesheet" href="/app/css/MyStyles.css" />
+
+	<script src="app/scripts/AA_Main.js"></script>
+	<script src="app/scripts/AA_StatBO.js"></script>
+	<script src="app/scripts/_app.directives.js"></script>
+	<script src="app/controls/_app.controls.js"></script>
+
+
+</head>
+<body ng-app="AA_Stats" ng-controller="AA_Controller">
+	<div class="div_main_wrapper">
+		<!-- Header/Navbar -->
+		<div class="div_header" header>
+			<!--<header style="height:100%"></header>-->
+		</div>
+		<!-- Main Content -->
+		<div class="div_content_main" ng-view>
+		</div>
+		<!-- Footer -->
+		<div class="div_footer" footer>
+		</div>
+	</div>
+	<!-- END div_main_wrapper -->
+
+
+	<div id="Modal_Settings" class="modal fade" settings>
+	</div>
+
+	<div id="Modal_Game" class="modal fade" newgame>
+	</div>
+
+	<!--Container for Dynamic Loading of *.html into a Modal-->
+	<div id="MyModal" class="modal fade" ng-controller="Modal_Contoller">
+		<div class="modal-dialog myModal">
+			<!-- Modal content-->
+			<div class="modal-content" ng-include="ModalData.URL">
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		$(document).ready(function () {
+
+		});
+
+		//STORAGE FUNCTIONS
+		var sStorage_Key = "AA_Data";
+		function getData() {
+			//return new DataBO();
+			var sData = localStorage.getItem(sStorage_Key);
+
+			if (sData) {
+				oData = new DataBO(sData);
+			}
+			//no localStorage set => init with default values
+			else {
+				oData = new DataBO();
+				saveData(oData);
+			}
+			return oData;
+		}
+
+		function saveData(oData) {
+			var sData = JSON.stringify(oData);
+			localStorage.setItem(sStorage_Key, sData);
+		}
+
+		function clearData() {
+			localStorage.removeItem("AA_Data");
+		}
+
+		function getStorageSize(o) {
+			var sData = JSON.stringify(o);
+			var size_KB = ((sData.length * 16) / (8 * 1024)).toFixed(2);
+			//$('[data-KEY="Storage_Size"]').html(size_KB);
+			return size_KB;
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
