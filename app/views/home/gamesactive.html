@@ -1,0 +1,75 @@
+﻿<table class="content_table">
+	<tr class="content_title">
+		<td colspan="3">
+			<h1>ACTIVE GAMES</h1>
+		</td>
+		<td colspan="4">
+			<ctlfaction value="CurrentFaction"></ctlfaction>
+		</td>
+	</tr>
+	<tr class="grid_header">
+		<td style="width:125px;">
+			GAME NAME
+		</td>
+		<td style="width:125px;">
+			OPPONENT
+		</td>
+		<td style="width:75px;">
+			RECORD
+		</td>
+		<td style="width:125px;">
+			ROUND
+		</td>
+		<td style="width:135px;">
+			COUNTRY
+		</td>
+		<td style="width:125px;">
+			TIMER
+		</td>
+		<td style="width:50px;">
+		</td>
+	</tr>
+
+	<tr ng-if=" (data.Games | filter: { Status: 'ACTIVE', Faction: CurrentFaction }).length === 0">
+		<td colspan="7" style="background-color:yellow">
+			No Active <span style="font-weight:bold">[ {{ CurrentFaction_Text() }} ]</span> Games Found...
+		</td>
+	</tr>
+	<tr ng-repeat="x in data.Games | filter: { Status: 'ACTIVE', Faction: CurrentFaction } track by $index ">
+		<td>
+			<span> {{ x.Game_Name }} </span>
+		</td>
+		<td>
+			<span> {{ x.Opponent_Name }} </span>
+		</td>
+		<td style="text-align:center">
+			<span> {{ x.Record }} </span>
+		</td>
+		<td>
+			<ctlround value="x.Round"></ctlround>			
+		</td>
+		<td>
+			<ctlcountry value="x.Country"></ctlcountry>
+		</td>
+		<td>
+			<ctltimer value="x.TO_Hours"></ctltimer>			
+		</td>
+		<td>
+			<div class="flex-container myfas">
+				<i class="fa fa-pencil-square fa-2x" style="color: darkgreen;" ng-click="EditGame('EDIT', x)"
+				   data-toggle="modal" data-target="#Modal_Game"></i>
+				<i class="fas fa-trash-alt fa-1x" style="color: darkred; font-size:1.75em; display:none"></i>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="7">
+			<div class="flex-container myfas" style="width:125px; margin:0"
+				 data-toggle="modal" data-target="#Modal_Game" ng-click="EditGame('NEW')">
+				<i class="fa fa-plus-circle fa-2x " style="color: darkgreen;"></i>
+				&nbsp;&nbsp;
+				New Game
+			</div>
+		</td>
+	</tr>
+</table>

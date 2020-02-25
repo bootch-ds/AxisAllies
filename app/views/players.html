@@ -1,0 +1,71 @@
+﻿<div style="margin:0 5px">
+    <!-- Active Games -->
+    <table class="content_table">
+        <tr class="content_title">
+            <td colspan="3">
+                <h1>OPPONENTS</h1>
+            </td>
+            <td colspan="4">
+            </td>
+        </tr>
+        <tr class="grid_header">
+            <td style="width:125px;" rowspan="2">
+                OPPONENT
+            </td>
+            <td style="width:75px;" rowspan="2">
+                GAME COUNT
+            </td>
+            <td colspan="2">
+                AXIS
+            </td>
+            <td colspan="2">
+                ALLY
+            </td>
+            <td style="width:50px;">
+            </td>
+        </tr>
+        <tr class="grid_header">
+            <td style="width:75px;">
+                WINS
+            </td>
+            <td style="width:75px;">
+                LOSSES
+            </td>
+            <td style="width:75px">
+                WINS
+            </td>
+            <td style="width:75px;">
+                LOSSES
+            </td>
+            <td style="width:50px;">
+            </td>
+        </tr>
+        <tr ng-if=" (Players).length === 0">
+            <td colspan="7" style="background-color:yellow">
+                No Opponents Found...
+            </td>
+        </tr>
+        <tr ng-repeat="x in Players track by $index ">
+            <td>
+                <span> {{ x.Opponent_Name }} </span>
+            </td>
+            <td style="text-align:center">
+                <span> {{ x.GameCount }} </span>
+            </td>
+            <td style="text-align:center">
+                <span> {{ x.Axis_Wins }} </span>
+            </td>
+            <td style="text-align:center">
+                <span> {{ x.Axis_Losses }} </span>
+            </td>
+            <td style="text-align:center">
+                <span> {{ x.Ally_Wins }} </span>
+            </td>
+            <td style="text-align:center">
+                <span> {{ x.Ally_Losses }} </span>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+</div>

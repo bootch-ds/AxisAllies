@@ -1,0 +1,138 @@
+﻿<div class="modal-dialog myModal">
+    <!-- Modal content-->
+    <div class="modal-content" ng-controller="SettingsController">
+        <div class="modal-header">
+            <h4 class="modal-title">Settings</h4>
+
+            <span class="fa-stack myClose myfas" data-dismiss="modal">
+                <i class="fas fa-square fa-stack-2x" style="color:red"></i>
+                <i class="fa fa-times fa-stack-1x fa-lg" style="color:white;"></i>
+            </span>
+        </div>
+
+        <div class="modal-body" style="padding:0">
+            <table style="width:100%">
+                <tr>
+                    <td></td>
+                    <td class="input_label" style="width:95px">
+                        Name :
+                    </td>
+                    <td class="input_cell" colspan="2">
+                        <input type="text" ng-model="data.UserName" placeholder="User Name" style="width:245px" />
+                    </td>
+                </tr>
+                <tr class="border_t">
+                    <td class="border_r border_b" rowspan="4" style="text-align:center">
+                        <img src="/assets/img/axis.png" width="50" height="50" />
+                        <br>
+                        Axis
+                    </td>
+                    <td></td>
+                    <td style="width:95px">
+                        Wins
+                    </td>
+                    <td>
+                        Losses
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="input_label">
+                        Initial :
+                    </td>
+                    <td class="input_cell" style="padding-top:5px">
+                        <input type="number" ng-model="data.axis.InitWins" placeholder="0" style="width:75px" />
+                    </td>
+                    <td class="input_cell" style="padding-top:5px">
+                        <input type="number" ng-model="data.axis.InitLosses" placeholder="0" style="width:75px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input_label" style="width:90px">
+                        Game Log :
+                    </td>
+                    <td>
+                        <span style="width:75px"> {{ data.axis.GameLogWins }} </span>
+                    </td>
+                    <td>
+                        <span style="width:75px"> {{ data.axis.GameLogLosses }} </span>
+                    </td>
+                </tr>
+                <tr class="border_b">
+                    <td class="input_label">
+                        Total :
+                    </td>
+                    <td>
+                        <span style="width:75px"> {{ data.axis.TotalWins }} </span>
+                    </td>
+                    <td>
+                        <span style="width:75px"> {{ data.axis.TotalLosses }} </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="border_r" rowspan="4" style="text-align:center">
+                        <img src="/assets/img/ally.png" width="50" height="50" />
+                        <br>
+                        Allies
+                    </td>
+                    <td></td>
+                    <td style="width:95px">
+                        Wins
+                    </td>
+                    <td>
+                        Losses
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input_label">
+                        Initial :
+                    </td>
+                    <td class="input_cell" style="padding-top:5px">
+                        <input type="number" ng-model="data.ally.InitWins" placeholder="0" style="width:75px" />
+                    </td>
+                    <td class="input_cell" style="padding-top:5px">
+                        <input type="number" ng-model="data.ally.InitLosses" placeholder="0" style="width:75px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input_label" style="width:90px">
+                        Game Log :
+                    </td>
+                    <td>
+                        <span style="width:75px"> {{ data.ally.GameLogWins }} </span>
+                    </td>
+                    <td>
+                        <span style="width:75px"> {{ data.ally.GameLogLosses }} </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input_label">
+                        Total :
+                    </td>
+                    <td>
+                        <span style="width:75px"> {{ data.ally.TotalWins }} </span>
+                    </td>
+                    <td>
+                        <span style="width:75px"> {{ data.ally.TotalLosses }} </span>
+                    </td>
+                </tr>
+                <tr class="border_t" style="height: 55px">
+                    <td></td>
+                    <td class="input_label">
+                        Clear Data :
+                    </td>
+                    <td colspan="2">
+                        <input type="button" class="button" ng-click="ClearData()" value="Reset" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default modal_button mybutton" data-dismiss="modal"
+                    ng-click="UpdateSettings()">
+                Update Settings
+            </button>
+        </div>
+    </div>
+</div>

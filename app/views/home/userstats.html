@@ -1,0 +1,74 @@
+﻿<table class="content_table">
+    <tr class="content_title">
+        <td colspan="6">
+            <h1>STATS</h1>
+        </td>
+    </tr>
+    <tr class="grid_header">
+        <td style="width:75px;">
+            TEAM
+        </td>
+        <td>
+            WINS
+        </td>
+        <td>
+            LOSSES
+        </td>
+        <td>
+            GAMES
+        </td>
+        <td>
+            PERCENT
+        </td>
+        <td>
+            ACTIVE
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center">
+            <img src="/assets/img/Axis.png" width="50" height="50" />
+            <br>
+            Axis
+        </td>
+        <td class="number_cell">
+            <!-- data-pname="Axis_TotalWins" data-value="-999" -->
+            <span> {{ data.axis.TotalWins }} </span>
+        </td>
+        <td class="number_cell">
+            <span> {{ data.axis.TotalLosses }} </span>
+
+        </td>
+        <td class="number_cell">
+            <span> {{ data.axis.GameCount }} </span>
+
+        </td>
+        <td class="number_cell">
+            <span> {{ data.axis.WinPercent }} %</span>
+        </td>
+        <td class="number_cell">
+            <span> {{ data.axis.GamesActive }} </span>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:center">
+            <img src="/assets/img/Ally.png" width="50" height="50" />
+            <br>
+            Allies
+        </td>
+        <td class="number_cell">
+            <span> {{ data.ally.TotalWins }} </span>
+        </td>
+        <td class="number_cell">
+            <span> {{ data.ally.TotalLosses }} </span>
+        </td>
+        <td class="number_cell">
+            <span> {{ data.ally.GameCount }} </span>
+        </td>
+        <td class="number_cell">
+            <span> {{ data.ally.WinPercent }} %</span>
+        </td>
+        <td class="number_cell">
+            <span> {{ data.ally.GamesActive }} </span>
+        </td>
+    </tr>
+</table>

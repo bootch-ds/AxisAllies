@@ -1,0 +1,124 @@
+﻿<div class="modal-dialog myModal">
+    <!-- Modal content-->
+    <div class="modal-content" ng-controller="GameController">
+        <div class="modal-header">
+            <h4 class="modal-title" ng-if="Action == 'NEW'">New Game</h4>
+            <h4 class="modal-title" ng-if="Action == 'EDIT'">Edit Game</h4>
+
+            <span class="fa-stack myClose myfas" data-dismiss="modal">
+                <i class="fas fa-square fa-stack-2x" style="color:red"></i>
+                <i class="fa fa-times fa-stack-1x fa-lg" style="color:white;"></i>
+            </span>
+        </div>
+
+        <div class="modal-body">
+            <table style="table-layout:fixed; width:100%">
+                <tr>
+                    <td class="input_label" width="135">
+                        Game Name :
+                    </td>
+                    <td class="input_cell">
+                        <input type="text" ng-model="data.Game_Name" placeholder="New Game" style="width:245px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input_label">
+                        Opponent :
+                    </td>
+                    <td class="input_cell">
+                        <input type="text" ng-model="data.Opponent_Name" placeholder="Opponent Name" style="width:245px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input_label">
+                        My Team:
+                    </td>
+                    <td>
+                        <ctlfaction value="data.Faction"></ctlfaction>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input_label">
+                        Round :
+                    </td>
+                    <td>
+                        <ctlround value="data.Round"></ctlround>                        
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input_label">
+                        Country :
+                    </td>
+                    <td class="input_cell" style="padding-bottom:10px">
+                        <ctlcountry value="data.Country"></ctlcountry>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input_label">
+                        Timer :
+                    </td>
+                    <td class="input_cell" style="padding-bottom:10px">
+                        <ctltimer value="data.TO_Hours"></ctltimer>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input_label">
+                        Start Date :
+                    </td>
+                    <td class="input_cell">
+                        <input type="date" ng-Model="data.StartDate" datetime="MM/dd/yy" style="width:150px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input_label">
+                        <label for="StartTime">
+                            Start Time :
+                        </label>
+
+                    </td>
+                    <td class="input_cell" style="padding-bottom:10px">
+                        <input type="time" ng-Model="data.StartTime" datetime="HH:mm" style="width:150px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input_label">
+                        <label>Status/Result :</label>
+
+                    </td>
+                    <td class="input_cell" style="padding-bottom:10px">
+                        <select style="width:150px" ng-Model="data.Status">
+                            <option value="NA">Select</option>
+                            <option value="ACTIVE">Active</option>
+                            <option value="WON">Win</option>
+                            <option value="LOSS">Loss</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="input_label">
+                        <label>Result Qualifier :</label>
+                    </td>
+                    <td class="input_cell" style="padding-bottom:10px">
+                        <select style="width:150px" ng-Model="data.ResultCondition">
+                            <option value="NA">Select</option>
+                            <option value="V">Victory</option>
+                            <option value="C">Concession</option>
+                            <option value="TO">Time-Out</option>
+                            <option value="QQ">Rage Quit</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default modal_button mybutton" ng-if="Action == 'EDIT'" data-dismiss="modal"
+                    ng-click="SaveGame()">
+                Update Game
+            </button>
+            <button type="button" class="btn btn-default modal_button mybutton" ng-if="Action == 'NEW'" data-dismiss="modal"
+                    ng-click="SaveGame()">
+                Save Game
+            </button>
+        </div>
+    </div>
+</div>

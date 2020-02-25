@@ -1,0 +1,198 @@
+﻿input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+body {
+	background-color: black;
+	color: white;
+	margin: 0;
+}
+
+.div_main_wrapper {
+	height: 100vh;
+	display: flex;
+	flex-flow: column;
+}
+.div_header,
+.div_footer {
+	height: 50px;
+}
+.div_content_main {
+	overflow: auto;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+	overflow-y: auto;
+}
+/*push items left if doesnt fit*/
+@media only screen and (max-width: 1200px) {
+	.div_content_main {
+		justify-content: left;
+	}
+}
+.flex-container {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+}
+
+/*Navbar - BEGIN*/
+.navbar {
+	height: 100%;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+	color: yellow !important;
+}
+.navbar-navcenter {
+	float: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+/*Navbar - END*/
+
+.input_label {
+	text-align: right;
+	padding-right: 10px;
+}
+.input_cell > input,
+.input_cell > select {
+	background-color: yellow;
+	padding-left: 5px;
+}
+.input_cell > select option {
+	background-color: white;
+}
+.input_cell_row {
+	background-color: yellow;
+	padding-left: 5px;
+	width: 40px;
+	height: 30px;
+}
+.number_cell {
+	text-align: right;
+	padding-right: 10px !important;
+}
+
+.img_div {
+	align-items: center;
+	text-align: center;
+}
+.myfas {
+	cursor: pointer;
+	align-items: center;
+}
+
+.content_table {
+	layout: fixed;
+	border-collapse: collapse;
+	margin: 0 auto;
+	background-color: white;
+	color: black;
+	border: solid 1px black;
+}
+.content_table td {
+	padding: 3px 5px;
+	border: solid 1px black;
+}
+.content_title {
+	color: yellow;
+	background-color: black;
+}
+
+.grid_header {
+	background-color: #00339a !important;
+	color: white !important;
+	font-weight: bold;
+	font-size: 18pt text-align: center;
+}
+.grid_header > td {
+	text-align: center;
+}
+
+.border_r {
+	border-right: solid 1px black;
+}
+.border_l {
+	border-left: solid 1px black;
+}
+.border_t {
+	border-top: solid 1px black;
+}
+.border_b {
+	border-bottom: solid 1px black;
+}
+
+/*for radio button selector when displayed in a main view*/
+[iscurrent] {
+	cursor: pointer;
+	color: white;
+}
+[iscurrent='1'] {
+	color: yellow;
+}
+/*for radio button selector when displayed in a modal*/
+.modal [iscurrent] {
+	cursor: pointer;
+	color: black;
+	border: solid 1px white;
+	margin: 3px 0px;
+	padding: 0px 3px;
+}
+.modal [iscurrent='1'] {
+	border: solid 1px black;
+	background-color: yellow;
+}
+
+/*modals - begin*/
+.modal-open .modal {
+	position: absolute;
+	top: calc(20%);
+}
+.modal-open .modal .modal-dialog {
+	margin: auto;
+}
+.myModal .modal-body {
+	color: black;
+}
+.myModal .modal-header {
+	background-color: #00339a;
+	color: white;
+	height: 50px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+.myModal .modal-footer {
+	background-color: grey;
+	color: white;
+	height: 55px;
+	padding: 0px;
+}
+.myClose {
+	float: right;
+	position: relative;
+	top: 4px;
+	right: -15px;
+	cursor: pointer
+}
+/*modals - end*/
+
+
+.modal_button {
+	vertical-align: baseline;
+	margin: 5px auto;
+	display: block;
+}
+
+.mybutton {
+	background-color: #4CAF50;
+	border: solid 1px black;
+}
