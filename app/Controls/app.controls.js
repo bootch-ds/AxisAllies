@@ -6,7 +6,7 @@ app.directive('ctlfaction', [function () {
 			SelectedFaction: "=value"
 			
 		},
-		templateUrl: "AxisAllies/app/controls/ControlTemplate.html", // "/app/controls/ctlFactionSelect.html",
+		templateUrl: "AxisAllies/app/Controls/ControlTemplate.html", // "/app/controls/ctlFactionSelect.html",
 		link: function (scope) {
 			scope.Partial = 'CTL_FACTION';
 
@@ -23,7 +23,7 @@ app.directive('ctlround', [function () {
 		scope: {
 			Round: "=value"
 		},
-		templateUrl: "AxisAllies/app/controls/ControlTemplate.html", // "/app/controls/ctlFactionSelect.html",
+		templateUrl: "AxisAllies/app/Controls/ControlTemplate.html", // "/app/controls/ctlFactionSelect.html",
 		link: function (scope) {
 			scope.Partial = 'CTL_ROUND';
 
@@ -44,7 +44,7 @@ app.directive('ctlcountry', [function () {
 		scope: {
 			Country: "=value"
 		},
-		templateUrl: "AxisAllies/app/controls/ControlTemplate.html", // "/app/controls/ctlFactionSelect.html",
+		templateUrl: "AxisAllies/app/Controls/ControlTemplate.html", // "/app/controls/ctlFactionSelect.html",
 		link: function (scope) {
 			scope.Partial = 'CTL_COUNTRY';
 
@@ -71,7 +71,7 @@ app.directive('ctltimer', [function () {
 		scope: {
 			TO_Hours: "=value"
 		},
-		templateUrl: "AxisAllies/app/controls/ControlTemplate.html", // "/app/controls/ctlFactionSelect.html",
+		templateUrl: "AxisAllies/app/Controls/ControlTemplate.html", // "/app/controls/ctlFactionSelect.html",
 		link: function (scope) {
 			scope.Partial = 'CTL_TIMER';
 
